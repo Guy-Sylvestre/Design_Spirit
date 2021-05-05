@@ -1,0 +1,20 @@
+# -*- coding: utf-8 -*-
+from odoo import http
+
+# class Design(http.Controller):
+#     @http.route('/design/design/', auth='public')
+#     def index(self, **kw):
+#         return "Hello, world"
+
+#     @http.route('/design/design/objects/', auth='public')
+#     def list(self, **kw):
+#         return http.request.render('design.listing', {
+#             'root': '/design/design',
+#             'objects': http.request.env['design.design'].search([]),
+#         })
+
+#     @http.route('/design/design/objects/<model("design.design"):obj>/', auth='public')
+#     def object(self, obj, **kw):
+#         return http.request.render('design.object', {
+#             'object': obj
+#         })

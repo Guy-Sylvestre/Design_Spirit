@@ -1,0 +1,66 @@
+<odoo>
+  <data>
+    <!-- explicit list view definition -->
+
+    <record model="ir.ui.view" id="design_list_view">
+      <field name="name">Client list</field>
+      <field name="model">design.client</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="f_name"/>
+          <field name="l_name"/>
+          <field name="phone"/>
+          <field name="email"/>
+          <field name="choix_service"/>
+          <field name="description"/>
+        </tree>
+      </field>
+    </record>
+
+    <!-- explicit list from definition -->
+
+    <record model="ir.ui.view" id="design_from_view">
+      <field name="name">Client Form</field>
+      <field name="model">design.client</field>
+      <field name="arch" type="xml">
+        <form>
+            <group>
+                <field name="f_name"/>
+                <field name="l_name"/>
+                <field name="phone"/>
+                <field name="email"/>
+                <field name="choix_service"/>
+                <field name="description"/>
+            </group>
+        </form>
+      </field>
+    </record>
+
+
+    <!-- actions opening views on models -->
+
+    <record model="ir.actions.act_window" id="client_action_window">
+      <field name="name">Client window</field>
+      <field name="res_model">design.client</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+
+    <!-- Top menu item -->
+
+    <menuitem name="design" id="menu"/>
+
+    <!-- menu categories -->
+
+    <menuitem name="Clients" id="design_client_list_cat" parent="menu"/>
+<!--     <menuitem name="Menu 2" id="design.menu_2" parent="design.menu_root"/> -->
+
+    <!-- actions -->
+
+    <menuitem name="Lis of client" id="design_client_list" parent="design_client_list_cat"
+              action="client_action_window"/>
+   <!--  <menuitem name="Server to list" id="design" parent="design.menu_2"
+              action="design.action_server"/> -->
+
+  </data>
+</odoo>
