@@ -1,5 +1,18 @@
 # -*- coding: utf-8 -*-
 from odoo import http
+import json
+
+
+class DesignSpirit(http.Controller):
+    @http.route('/contact_design_agent', methods=['POST'], auth="public", type="json")
+    def contact(self, **kwargs):
+        data = {}
+        data['request_received'] = kwargs
+        contact = http.request.e
+        nv['design.client'].sudo().create(kwargs)
+        return data
+
+
 
 # class Design(http.Controller):
 #     @http.route('/design/design/', auth='public')
